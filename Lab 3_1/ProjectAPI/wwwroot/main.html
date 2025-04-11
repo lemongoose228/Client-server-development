@@ -1,0 +1,366 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Test</title>
+</head>
+<body>
+
+    <h1>Test</h1>
+
+    <script>
+
+        async function main() {
+            const baseURL = 'api';
+            const headers = {
+                'Content-Type': 'application/json'
+            };
+
+            async function handleResponse(response) {
+                if (!response.ok) {
+                    const message = `Error: ${response.status} - ${response.statusText}`;
+                    throw new Error(message);
+                }
+                try {
+                    return await response.json();
+                } catch (error) {
+                    return await response.text();
+                }
+            }
+
+            async function testGetStudents() {
+                try {
+                    const response = await fetch(`${baseURL}/students`);
+                    const data = await handleResponse(response);
+                    console.log('GET /students:', data);
+                } catch (error) {
+                    console.error('GET /students error:', error);
+                }
+            }
+
+            async function testGetStudent(id) {
+                try {
+                    const response = await fetch(`${baseURL}/students/${id}`);
+                    const data = await handleResponse(response);
+                    console.log(`GET /students/${id}:`, data);
+                } catch (error) {
+                    console.error(`GET /students/${id} error:`, error);
+                }
+            }
+
+            async function testCreateStudent(studentData) {
+                try {
+                    const response = await fetch(`${baseURL}/students`, {
+                        method: 'POST',
+                        headers: headers,
+                        body: JSON.stringify(studentData)
+                    });
+                    const data = await handleResponse(response);
+                    console.log('POST /students:', data);
+                } catch (error) {
+                    console.error('POST /students error:', error);
+                }
+            }
+
+            async function testUpdateStudent(id, studentData) {
+                try {
+                    const response = await fetch(`${baseURL}/students/${id}`, {
+                        method: 'PUT',
+                        headers: headers,
+                        body: JSON.stringify(studentData)
+                    });
+                    console.log(`PUT /students/${id}:`, response.status);
+                } catch (error) {
+                    console.error(`PUT /students/${id} error:`, error);
+                }
+            }
+
+            async function testDeleteStudent(id) {
+                try {
+                    const response = await fetch(`${baseURL}/students/${id}`, {
+                        method: 'DELETE'
+                    });
+                    console.log(`DELETE /students/${id}:`, response.status);
+                } catch (error) {
+                    console.error(`DELETE /students/${id} error:`, error);
+                }
+            }
+
+            async function testGetStudentCourses(id) {
+                try {
+                    const response = await fetch(`${baseURL}/students/${id}/courses`);
+                    const data = await handleResponse(response);
+                    console.log(`GET /students/${id}/courses:`, data);
+                } catch (error) {
+                    console.error(`GET /students/${id}/courses error:`, error);
+                }
+            }
+
+            async function testSearchStudents(firstName, lastName) {
+                try {
+                    const response = await fetch(`${baseURL}/students/search?firstName=${firstName}&lastName=${lastName}`);
+                    const data = await handleResponse(response);
+                    console.log(`GET /students/search?firstName=${firstName}&lastName=${lastName}:`, data);
+                } catch (error) {
+                    console.error(`GET /students/search error:`, error);
+                }
+            }
+
+            async function testGetCourses() {
+                try {
+                    const response = await fetch(`${baseURL}/courses`);
+                    const data = await handleResponse(response);
+                    console.log('GET /courses:', data);
+                } catch (error) {
+                    console.error('GET /courses error:', error);
+                }
+            }
+
+            async function testGetCourse(id) {
+                try {
+                    const response = await fetch(`${baseURL}/courses/${id}`);
+                    const data = await handleResponse(response);
+                    console.log(`GET /courses/${id}:`, data);
+                } catch (error) {
+                    console.error(`GET /courses/${id} error:`, error);
+                }
+            }
+
+            async function testCreateCourse(courseData) {
+                try {
+                    const response = await fetch(`${baseURL}/courses`, {
+                        method: 'POST',
+                        headers: headers,
+                        body: JSON.stringify(courseData)
+                    });
+                    const data = await handleResponse(response);
+                    console.log('POST /courses:', data);
+                } catch (error) {
+                }
+            }
+
+            async function testUpdateCourse(id, courseData) {
+                try {
+                    const response = await fetch(`${baseURL}/courses/${id}`, {
+                        method: 'PUT',
+                        headers: headers,
+                        body: JSON.stringify(courseData)
+                    });
+                    console.log(`PUT /courses/${id}:`, response.status);
+                } catch (error) {
+                    console.error(`PUT /courses/${id} error:`, error);
+                }
+            }
+
+            async function testDeleteCourse(id) {
+                try {
+                    const response = await fetch(`${baseURL}/courses/${id}`, {
+                        method: 'DELETE'
+                    });
+                    console.log(`DELETE /courses/${id}:`, response.status);
+                } catch (error) {
+                    console.error(`DELETE /courses/${id} error:`, error);
+                }
+            }
+
+            async function testGetCourseStudents(id) {
+                try {
+                    const response = await fetch(`${baseURL}/courses/${id}/students`);
+                    const data = await handleResponse(response);
+                    console.log(`GET /courses/${id}/students:`, data);
+                } catch (error) {
+                    console.error(`GET /courses/${id}/students error:`, error);
+                }
+            }
+
+            async function testGetEnrollments() {
+                try {
+                    const response = await fetch(`${baseURL}/enrollments`);
+                    const data = await handleResponse(response);
+                    console.log('GET /enrollments:', data);
+                } catch (error) {
+                    console.error('GET /enrollments error:', error);
+                }
+            }
+
+            async function testGetEnrollment(id) {
+                try {
+                    const response = await fetch(`${baseURL}/enrollments/${id}`);
+                    const data = await handleResponse(response);
+                    console.log(`GET /enrollments/${id}:`, data);
+                } catch (error) {
+                    console.error(`GET /enrollments/${id} error:`, error);
+                }
+            }
+
+            async function testCreateEnrollment(enrollmentData) {
+                try {
+                    const response = await fetch(`${baseURL}/enrollments`, {
+                        method: 'POST',
+                        headers: headers,
+                        body: JSON.stringify(enrollmentData)
+                    });
+                    const data = await handleResponse(response);
+                    console.log('POST /enrollments:', data);
+                } catch (error) {
+                }
+            }
+
+            async function testUpdateEnrollment(id, enrollmentData) {
+                try {
+                    const response = await fetch(`${baseURL}/enrollments/${id}`, {
+                        method: 'PUT',
+                        headers: headers,
+                        body: JSON.stringify(enrollmentData)
+                    });
+                    console.log(`PUT /enrollments/${id}:`, response.status);
+                } catch (error) {
+                    console.error(`PUT /enrollments/${id} error:`, error);
+                }
+            }
+
+            async function testDeleteEnrollment(id) {
+                try {
+                    const response = await fetch(`${baseURL}/enrollments/${id}`, {
+                        method: 'DELETE'
+                    });
+                    console.log(`DELETE /enrollments/${id}:`, response.status);
+                } catch (error) {
+                    console.error(`DELETE /enrollments/${id} error:`, error);
+                }
+            }
+
+            async function testGetEnrollmentsByStudent(studentId) {
+                try {
+                    const response = await fetch(`${baseURL}/enrollments/student/${studentId}`);
+                    const data = await handleResponse(response);
+                    console.log(`GET /enrollments/student/${studentId}:`, data);
+                } catch (error) {
+                    console.error(`GET /enrollments/student/${studentId} error:`, error);
+                }
+            }
+
+            async function testGetEnrollmentsByCourse(courseId) {
+                try {
+                    const response = await fetch(`${baseURL}/enrollments/course/${courseId}`);
+                    const data = await handleResponse(response);
+                    console.log(`GET /enrollments/course/${courseId}:`, data);
+                } catch (error) {
+                    console.error(`GET /enrollments/course/${courseId} error:`, error);
+                }
+            }
+
+            async function testGetEnrollmentByStudentAndCourse(studentId, courseId) {
+                try {
+                    const response = await fetch(`${baseURL}/enrollments/student/${studentId}/course/${courseId}`);
+                    const data = await handleResponse(response);
+                    console.log(`GET /enrollments/student/${studentId}/course/${courseId}:`, data);
+                } catch (error) {
+                    console.error(`GET /enrollments/student/${studentId}/course/${courseId} error:`, error);
+                }
+            }
+
+            async function testGetStudentGPA(studentId) {
+                try {
+                    const response = await fetch(`${baseURL}/enrollments/grades/student/${studentId}`);
+                    const data = await handleResponse(response);
+                    console.log(`GET /enrollments/grades/student/${studentId}:`, data);
+                } catch (error) {
+                    console.error(`GET /enrollments/grades/student/${studentId} error:`, error);
+                }
+            }
+
+            async function testGetCourseAverageGrade(courseId) {
+                try {
+                    const response = await fetch(`${baseURL}/enrollments/grades/course/${courseId}`);
+                    const data = await handleResponse(response);
+                    console.log(`GET /enrollments/grades/course/${courseId}:`, data);
+                } catch (error) {
+                    console.error(`GET /enrollments/grades/course/${courseId} error:`, error);
+                }
+            }
+
+            async function testGetUngradedEnrollments() {
+                try {
+                    const response = await fetch(`${baseURL}/enrollments/ungraded`);
+                    const data = await handleResponse(response);
+                    console.log(`GET /enrollments/ungraded:`, data);
+                } catch (error) {
+                    console.error(`GET /enrollments/ungraded error:`, error);
+                }
+            }
+
+            const newStudent = {
+                firstName: 'Test',
+                lastName: 'Student',
+                email: 'test.student@example.com',
+                dateOfBirth: '2003-01-01T00:00:00'
+            };
+
+            const updateStudent = {
+                studentId: 1,
+                firstName: 'Updated',
+                lastName: 'Student',
+                email: 'updated.student@example.com',
+                dateOfBirth: '2003-01-01T00:00:00'
+            };
+
+            const newCourse = {
+                courseName: 'Test Course',
+                description: 'A test course',
+                credits: 3
+            };
+
+            const updateCourse = {
+                courseId: 1,
+                courseName: 'Updated Course',
+                description: 'An updated test course',
+                credits: 4
+            };
+
+
+            const newEnrollment = {
+                studentId: 1,
+                courseId: 1,
+                enrollmentDate: '2023-10-27T00:00:00'
+            };
+
+            const updateEnrollment = {
+                enrollmentId: 1,
+                studentId: 1,
+                courseId: 1,
+                enrollmentDate: '2023-10-27T00:00:00',
+                grade: 90
+            };
+
+            await testGetStudents();
+            await testGetStudent(1);
+            await testCreateStudent(newStudent);
+            await testUpdateStudent(1, updateStudent);
+            await testGetStudentCourses(1);
+            await testSearchStudents('Alice', 'Smith');
+
+            // Courses
+            await testGetCourses();
+            await testGetCourse(1);
+            await testCreateCourse(newCourse);
+            await testUpdateCourse(1, updateCourse);
+            await testGetCourseStudents(1);
+
+            // Enrollments
+            await testGetEnrollments();
+            await testGetEnrollment(1);
+            await testCreateEnrollment(newEnrollment);
+            await testUpdateEnrollment(1, updateEnrollment);
+            await testGetEnrollmentsByStudent(1);
+            await testGetEnrollmentsByCourse(1);
+            await testGetEnrollmentByStudentAndCourse(1, 1);
+            await testGetStudentGPA(1);
+            await testGetCourseAverageGrade(1);
+            await testGetUngradedEnrollments();
+        }
+        
+        main();
+    </script>
+
+</body>
+</html>

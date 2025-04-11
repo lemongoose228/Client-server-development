@@ -1,0 +1,125 @@
+{
+  "Version": 1,
+  "Hash": "t6+Ve2Sqk1dIHeIGjUy8t6VbfcgxSIjHcXH62tukvRs=",
+  "Source": "ProjectAPI",
+  "BasePath": "_content/ProjectAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "ProjectAPI\\wwwroot",
+      "Source": "ProjectAPI",
+      "ContentRoot": "C:\\Users\\konov\\OneDrive\\Рабочий стол\\Учёба\\енка\\ProjectAPI\\ProjectAPI\\wwwroot\\",
+      "BasePath": "_content/ProjectAPI",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\konov\\OneDrive\\Рабочий стол\\Учёба\\енка\\ProjectAPI\\ProjectAPI\\wwwroot\\main.html",
+      "SourceId": "ProjectAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\konov\\OneDrive\\Рабочий стол\\Учёба\\енка\\ProjectAPI\\ProjectAPI\\wwwroot\\",
+      "BasePath": "_content/ProjectAPI",
+      "RelativePath": "main#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "h2nyenzz6n",
+      "Integrity": "t9ynpYr+YQuKx2NLBywmatErP0h0WSdep7mGl6Hmzak=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\main.html"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "main.h2nyenzz6n.html",
+      "AssetFile": "C:\\Users\\konov\\OneDrive\\Рабочий стол\\Учёба\\енка\\ProjectAPI\\ProjectAPI\\wwwroot\\main.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14482"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"t9ynpYr+YQuKx2NLBywmatErP0h0WSdep7mGl6Hmzak=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 11 Apr 2025 09:43:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "h2nyenzz6n"
+        },
+        {
+          "Name": "label",
+          "Value": "main.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-t9ynpYr+YQuKx2NLBywmatErP0h0WSdep7mGl6Hmzak="
+        }
+      ]
+    },
+    {
+      "Route": "main.html",
+      "AssetFile": "C:\\Users\\konov\\OneDrive\\Рабочий стол\\Учёба\\енка\\ProjectAPI\\ProjectAPI\\wwwroot\\main.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14482"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"t9ynpYr+YQuKx2NLBywmatErP0h0WSdep7mGl6Hmzak=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 11 Apr 2025 09:43:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-t9ynpYr+YQuKx2NLBywmatErP0h0WSdep7mGl6Hmzak="
+        }
+      ]
+    }
+  ]
+}
